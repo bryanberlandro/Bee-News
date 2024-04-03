@@ -13,7 +13,7 @@ export function MainNews(){
         const fetchData = async () => {
             try{
                 const response = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=7ee21e6af2944c69a75046c9cf40e088')
-                setData(response.data.articles[counter])
+                setData(response.data.articles[0 || counter])
                 setLoading(false)
             } catch(err){
                 console.log(err)
@@ -94,7 +94,7 @@ export function MainNews(){
                 </div>
                 <div className="md:w-80">
                     <p className="text-xs text-neutral-700">
-                        {data && data.source.name && data.source.name} - {data.publishedAt.substr(0,10)}
+                        {data?.source.name} - {data.publishedAt.substr(0,10)}
                     </p>
                     <h1 className="font-semibold mt-1 text-base md:font-bold md:mt-2">{data.title}</h1>
                     <p className="text-sm mt-2">{data.description}</p>
