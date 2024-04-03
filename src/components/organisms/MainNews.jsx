@@ -94,7 +94,7 @@ export function MainNews(){
                 </div>
                 <div className="md:w-80">
                     <p className="text-xs text-neutral-700">
-                        {data.source.name} - {data.publishedAt.substr(0,10)}
+                        {data && data.source.name && data.source.name} - {data.publishedAt.substr(0,10)}
                     </p>
                     <h1 className="font-semibold mt-1 text-base md:font-bold md:mt-2">{data.title}</h1>
                     <p className="text-sm mt-2">{data.description}</p>
